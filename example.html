@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TBL FIX</title>
+
+        <style>
+            #tbl {
+                width: 100%;
+                background: white;
+            }
+            #tbl thead th {
+                background: #123456;
+                color: #fff;
+            }
+            #tbl td, #tbl th {
+                border: 1px solid
+            }
+        </style>
+    </head>
+
+    <body>
+        <table id="tbl">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="tblfix.js"></script>
+    <link rel="stylesheet" href="tblfix.css">
+    <script>
+        $(document).ready(function() {
+
+            for (var r = 0; r < 100; r++) {
+                if(r == 0 ) {
+                    $("#tbl thead").append(
+                        $trh = $("<tr>").addClass("trh"),
+                        $trc = $("<tr>").addClass("trc")
+                    )
+                }
+                $("#tbl tbody").append($trb = $("<tr>"))
+                for (var c = 0; c < 100; c++) {
+                    if(r == 0) {
+                        $trh.append(
+                            $("<th>").addClass(c < 6 ? "fixed" : null).text("t" + c)
+                        )
+                        $trc.append(
+                            $("<th>").addClass(c < 6 ? "fixed" : null).text("c" + c)
+                        )
+                    }
+                    $trb.append($("<td>").text(r + "." + c))
+                }
+            }
+
+            $("#tbl").tblfix({active: true})
+
+
+        });
+    </script>
+
+</html>

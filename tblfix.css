@@ -1,0 +1,52 @@
+
+.tblfix.on {
+    max-height: 100%;
+    width: 100%;
+    min-height: 100%;
+    /* overflow: scroll; */
+}
+
+.tblfix.on table { cursor: grab }
+
+.tblfix.on table thead tr th {
+    position: sticky;
+    top: 0px;
+    color: #fff;
+    font-weight: 600;
+    z-index: 1001;
+}
+
+.tblfix.on table tbody tr td:first-child {
+     border-left: 1px solid #e8e8e8; 
+}
+
+.tblfix.on th.fixed {
+    position: sticky;
+    left: 0;
+    z-index: 1002;
+}
+
+.tblfix.on td.fixed {
+    position: sticky;
+    left: 0;
+    background: #fff;
+    z-index: 1000;
+}
+
+.tblfix.on td {
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 2px;
+}
+
+.tblfix.on .center {
+    text-align: center;
+}
+
+.tblfix.on tr.even td {
+    background: #e8e8e8;
+}
+
+.tbl_fix.on table thead tr th {
+     position: unset;
+}
